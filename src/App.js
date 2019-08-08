@@ -15,7 +15,15 @@ class App extends React.Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Suppliers App</h2>
-          I am { this.props.suppliers.length > 0 && this.props.suppliers[0] }
+          <div className="suppliersRankList">
+            {this.props.suppliers.map((supplier, index) => (
+              <div key={supplier.key}>
+                <div>{supplier.name} {index + 1}</div>
+                <div>{supplier.average_transaction_amount}</div>
+              </div>
+            ))}
+          </div>
+          <button onClick={this.props.onFetchSuppliers}>toto</button>
         </header>
       </div>
     );
