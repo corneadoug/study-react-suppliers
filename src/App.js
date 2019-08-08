@@ -54,7 +54,8 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  suppliers: state.suppliers
+  suppliers: state.suppliers,
+  bankData: state.bankData
 });
 
 const mapActionsToProps = {

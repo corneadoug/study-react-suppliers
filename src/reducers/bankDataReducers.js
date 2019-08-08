@@ -1,4 +1,4 @@
-import { SAVE_BANK_DATA, saveBankData } from '../actions/bankDataActions';
+import { SAVE_BANK_DATA } from '../actions/bankDataActions';
 
 export default function bankDataReducer(state = '', { type, payload }) {
     switch (type) {
@@ -10,7 +10,7 @@ export default function bankDataReducer(state = '', { type, payload }) {
 }
 
 function saveBankData(state, {key, infos}) {
-    let copyState = state.slice();
-    copyState[key] = infos;
-    return copyState;
+    let newState = {};
+    newState[key] = infos;
+    return {...state, ...newState};
 }
