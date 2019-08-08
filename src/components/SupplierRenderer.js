@@ -9,15 +9,22 @@ class SupplierRenderer extends React.Component {
 
   render() {
     return (
-      <div className="supplierRenderer">
-        <div>
-          <img className="logo" src={this.props.supplier.logo_url} alt="logo" />
+      <div className="supplierRendererContainer">
+        <div className="supplierRenderer" onClick={this.props.onClick}>
+          <div>
+            <img className="logo" src={this.props.supplier.logo_url} alt="logo" />
+          </div>
+          <div className="centerPart">
+            <div>{this.props.supplier.name}</div>
+            <div>{this.roundNumber(this.props.supplier.average_transaction_amount)}€</div>
+          </div>
+          <div className="rank">#{this.props.rank}</div>
         </div>
-        <div className="centerPart">
-          <div>{this.props.supplier.name}</div>
-          <div>{this.roundNumber(this.props.supplier.average_transaction_amount)}€</div>
+        <div className="tagContainer">
+          {this.props.supplier.categories.map((category, index) => (
+            category ? <div className="category" key={category}>{category}</div> : ''
+          ))}
         </div>
-        <div className="rank">#{this.props.rank}</div>
       </div>
     );
   }
