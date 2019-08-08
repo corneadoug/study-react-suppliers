@@ -1,0 +1,29 @@
+.supplierRenderer {
+    display: flex;
+    font-size: 12px;
+    padding: 5px;
+    border: 1px solid gray;
+    margin: 5px;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.rank {
+    font-size: 20px;
+    font-weight: 500;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.centerPart {
+    margin: 0 10px;
+    text-align: left;
+    display: inline-block;
+    vertical-align:  middle;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import { connect } from 'react-redux';
 import { fetchSuppliers } from './actions/suppliersActions';
+import SupplierRenderer from './components/SupplierRenderer';
 import './App.css';
 
 class App extends React.Component {
@@ -13,17 +13,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Suppliers App</h2>
+          <h2>Suppliers Ranking</h2>
           <div className="suppliersRankList">
             {this.props.suppliers.map((supplier, index) => (
-              <div key={supplier.key}>
-                <div>{supplier.name} {index + 1}</div>
-                <div>{supplier.average_transaction_amount}</div>
-              </div>
+              <SupplierRenderer supplier={supplier} rank={index + 1} key={supplier.key} />
             ))}
           </div>
-          <button onClick={this.props.onFetchSuppliers}>toto</button>
         </header>
       </div>
     );
