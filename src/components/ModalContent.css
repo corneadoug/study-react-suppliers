@@ -1,0 +1,29 @@
+input {
+    width: 200px;
+}
+
+.errorMsg {
+    font-size: 8px;
+    color: red;
+}
+
+.inputContainer {
+    margin-bottom: 10px;
+}
+
+.saveBtn {
+    margin-left: 20px;
+    background-color: cornflowerblue;
+}
+
+.btnContainer {
+    text-align: center;
+}
+
+.modalBtn {
+    cursor: pointer;
+}
+
+.modalBtn:disabled {
+    cursor: default;
+}

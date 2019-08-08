@@ -16,7 +16,6 @@ function fetchSuppliers(state) {
         const suppliersArray = Object.keys(suppliersData).map((key) => ({...suppliersData[key], key}));
         // filter to only get active clients
         const filteredArray = suppliersArray.filter((obj) => (obj.isActive));
-        console.log('filteredArray %o', filteredArray);
         // return ordered array
         return filteredArray.sort((a, b) => (a.rank > b.rank ? 1 : 0));
     } else {
